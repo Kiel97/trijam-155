@@ -1,0 +1,583 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://assets/images/trampolines.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Jumper.gd" type="Script" id=3]
+[ext_resource path="res://scenes/border.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/colored_packed.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/trampoline_hero.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/jumper_hero.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Window.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/fonts/ui_font.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scenes/Game.gd" type="Script" id=10]
+[ext_resource path="res://assets/fonts/ui_main.tres" type="DynamicFont" id=11]
+[ext_resource path="res://assets/sounds/hurt1.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/jump2.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/Retro Mystic.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/coin3.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/coin2.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/coin1.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/jingles_NES00.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/Retro Comedy.ogg" type="AudioStream" id=19]
+
+[sub_resource type="TileSet" id=8]
+0/name = "colored_packed.png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 272, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+2/name = "colored_packed.png 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 80, 160, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "colored_packed.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 304, 0, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "colored_packed.png 4"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 256, 256, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "colored_packed.png 5"
+5/texture = ExtResource( 5 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 272, 256, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "colored_packed.png 6"
+6/texture = ExtResource( 5 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 288, 256, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "colored_packed.png 7"
+7/texture = ExtResource( 5 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 256, 288, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "colored_packed.png 8"
+8/texture = ExtResource( 5 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 272, 288, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "colored_packed.png 9"
+9/texture = ExtResource( 5 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 288, 288, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "colored_packed.png 10"
+10/texture = ExtResource( 5 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 16, 16, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "colored_packed.png 11"
+11/texture = ExtResource( 5 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 16, 16, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "colored_packed.png 12"
+12/texture = ExtResource( 5 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 48, 16, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 9.05539
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 4.5 )
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/RTrampoline:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 16, 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites/LTrampoline:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 16, 16 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "trigger"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/LTrampoline:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 16, 16 ), Rect2( 16, 0, 16, 16 ), Rect2( 32, 0, 16, 16 ), Rect2( 16, 0, 16, 16 ), Rect2( 0, 0, 16, 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites/RTrampoline:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 16, 16 ), Rect2( 16, 0, 16, 16 ), Rect2( 32, 0, 16, 16 ), Rect2( 16, 0, 16, 16 ), Rect2( 0, 0, 16, 16 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 120.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 138, 5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 137, 10 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CivvieSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="FireSpawnTimer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="HBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_left = 32.0
+margin_right = -32.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 192, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="CanvasLayer/UI"]
+margin_top = 2.0
+margin_right = 12.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 9 )
+text = "55"
+
+[node name="Control" type="Control" parent="CanvasLayer/UI"]
+margin_left = 16.0
+margin_right = 176.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+
+[node name="Civvies" type="Label" parent="CanvasLayer/UI"]
+margin_left = 180.0
+margin_top = 2.0
+margin_right = 192.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 9 )
+text = "00"
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource( 8 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 4
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 9, 0, 4, 4, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 6, 0, 15, 7, 0, 65536, 0, 0, 65540, 7, 0, 65541, 8, 0, 65542, 8, 0, 65543, 8, 0, 65544, 8, 0, 65545, 8, 0, 65546, 8, 0, 65547, 9, 0, 65551, 0, 0, 131072, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131087, 0, 0, 196608, 0, 0, 196612, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196619, 0, 0, 196623, 0, 0, 262144, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262159, 0, 0, 327680, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327695, 0, 0, 393216, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393231, 0, 0, 458752, 0, 0, 458756, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458763, 0, 0, 458767, 0, 0, 524288, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524303, 0, 0, 589824, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589839, 0, 0, 655360, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655375, 0, 0, 720896, 0, 0, 720900, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720907, 0, 0, 720911, 0, 0, 786432, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786447, 0, 0, 851968, 0, 0, 851969, 11, 0, 851971, 10, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 2, 0, 851976, 2, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 11, 0, 851982, 12, 0, 851983, 0, 0, 983039, 3, 0, 917504, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 3, 0, 917518, 3, 0, 917519, 3, 0, 917520, 3, 0 )
+
+[node name="Windows" type="Node2D" parent="."]
+
+[node name="Window" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 88, 56 )
+
+[node name="Window2" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 168, 56 )
+
+[node name="Window3" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 120, 88 )
+
+[node name="Window4" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 136, 88 )
+
+[node name="Window5" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 168, 120 )
+
+[node name="Window6" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 88, 120 )
+
+[node name="Window7" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 120, 152 )
+
+[node name="Window8" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 136, 152 )
+
+[node name="Window9" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 168, 184 )
+
+[node name="Window10" parent="Windows" instance=ExtResource( 8 )]
+position = Vector2( 88, 184 )
+
+[node name="Jumper" type="KinematicBody2D" parent="." groups=["jumper"]]
+position = Vector2( 125, 183 )
+collision_layer = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Jumper"]
+texture = ExtResource( 7 )
+region_rect = Rect2( 464, 64, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumper"]
+shape = SubResource( 2 )
+
+[node name="Die" type="AudioStreamPlayer" parent="Jumper"]
+stream = ExtResource( 12 )
+
+[node name="Player" type="Area2D" parent="." groups=["trampoline"]]
+position = Vector2( 125, 215 )
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="Sprites" type="Node2D" parent="Player"]
+position = Vector2( -7, 1 )
+
+[node name="LTrampoline" type="Sprite" parent="Player/Sprites"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="RTrampoline" type="Sprite" parent="Player/Sprites"]
+position = Vector2( 15, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="RHero" type="Sprite" parent="Player/Sprites"]
+position = Vector2( 29, 0 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 400, 0, 16, 16 )
+
+[node name="LHero" type="Sprite" parent="Player/Sprites"]
+position = Vector2( -14, 0 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 400, 0, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 3.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/RESET = SubResource( 9 )
+anims/trigger = SubResource( 6 )
+
+[node name="Jump" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 13 )
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Border" type="Area2D" parent="Borders" groups=["flip_side"]]
+position = Vector2( 5, 120 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Border"]
+position = Vector2( 0, 1.5 )
+shape = SubResource( 3 )
+
+[node name="Border2" type="Area2D" parent="Borders" groups=["flip_side"]]
+position = Vector2( 251, 121 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/Border2"]
+shape = SubResource( 3 )
+
+[node name="T" type="StaticBody2D" parent="Borders"]
+position = Vector2( 125, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/T"]
+position = Vector2( 3, -5 )
+shape = SubResource( 4 )
+
+[node name="B" type="StaticBody2D" parent="Borders"]
+position = Vector2( 129, 234 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/B"]
+position = Vector2( -1, 0 )
+shape = SubResource( 5 )
+
+[node name="SummaryLayer" type="CanvasLayer" parent="."]
+
+[node name="PostGameBoard" type="ColorRect" parent="SummaryLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.141176, 0.141176, 0.141176, 0.670588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="SummaryLayer/PostGameBoard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SummaryLayer/PostGameBoard/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 206.0
+margin_bottom = 190.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+
+[node name="Title" type="Label" parent="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer"]
+margin_left = 33.0
+margin_right = 122.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 11 )
+text = "You lose"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer"]
+margin_left = 51.0
+margin_top = 28.0
+margin_right = 104.0
+margin_bottom = 55.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+text = "Score: 000
+Time: 000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 156.0
+margin_bottom = 124.0
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer"]
+margin_left = 15.0
+margin_top = 128.0
+margin_right = 141.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+text = "Click here to Start Again"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer/Button"]
+autoplay = "blink"
+anims/RESET = SubResource( 15 )
+anims/blink = SubResource( 16 )
+
+[node name="CivvieSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="CivvieSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="CivvieSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -10.0
+autoplay = true
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="CivvieSpawnTimer" to="." method="_on_CivvieSpawnTimer_timeout"]
+[connection signal="timeout" from="FireSpawnTimer" to="." method="_on_FireSpawnTimer_timeout"]
+[connection signal="dead" from="Jumper" to="." method="_on_Jumper_dead"]
+[connection signal="dead" from="Jumper" to="Player" method="_on_Jumper_dead"]
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[connection signal="rescued_civvie" from="Player" to="." method="_on_Player_rescued_civvie"]
+[connection signal="body_entered" from="Borders/Border" to="Borders/Border" method="_on_Border_body_entered"]
+[connection signal="body_entered" from="Borders/Border2" to="Borders/Border2" method="_on_Border_body_entered"]
+[connection signal="pressed" from="SummaryLayer/PostGameBoard/MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
